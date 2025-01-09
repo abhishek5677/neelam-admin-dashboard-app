@@ -12,11 +12,12 @@ import {
     FormHelperText,
 } from "@mui/material";
 import { UserContext } from "../../utils/UserContext";
+import { generateUID } from "../../utils/Hooks";
 
 
 export const AddUser = (props) => {
 
-    const { open, handleClose, setUserTabelData } = props;
+    const { open, handleClose } = props;
 
     const { allUsersData, updatedUserList } = useContext(UserContext);
 
@@ -28,7 +29,6 @@ export const AddUser = (props) => {
     });
 
     const [errors, setErrors] = useState({});
-
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -58,7 +58,7 @@ export const AddUser = (props) => {
             const newObj = {
                 ...formData,
                 fullName: formData.firstName + " " + formData.lastName,
-                id: Math.floor(Math.random() * 100),
+                id: generateUID(),
             };
             console.log(newObj);
 
@@ -66,6 +66,12 @@ export const AddUser = (props) => {
             console.log(newArr);
             // setUserTabelData(newArr)
             updatedUserList(newArr);
+            setFormData({
+                firstName: "",
+                lastName: "",
+                email: "",
+                role: "",
+            });
             handleClose();
         }
     };

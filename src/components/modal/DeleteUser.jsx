@@ -16,7 +16,6 @@ export const DeleteUser = (props) => {
 
     const handleSubmit = () => {
         const updatedArray = allUsersData.filter(item => item.id !== userData.id);
-        // setUserTabelData(updatedArray)
         updatedUserList(updatedArray)
         handleClose()
     };

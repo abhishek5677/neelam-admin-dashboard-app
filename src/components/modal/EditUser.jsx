@@ -77,7 +77,6 @@ export const EditUser = (props) => {
                 item.id === formData.id ? newObj : item
             );
             console.log("updated user array", updatedArray);
-            // setAllUsersData(updatedArray)
             updatedUserList(updatedArray)
             handleClose(); // Close the modal on successful submission
         }

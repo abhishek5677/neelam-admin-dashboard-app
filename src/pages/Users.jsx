@@ -18,6 +18,7 @@ const Users = () => {
 
     const [userTableData, setUserTabelData] = useState([])
     const [loadingData, setLoadingData] = useState(true)
+    const [userData, setUserData] = useState()
 
     // user list data
     const { allUsersData, setAllUsersData } = useContext(UserContext)
@@ -32,8 +33,8 @@ const Users = () => {
 
     // user table columns
     const columns = [
-        { field: 'id', headerName: 'User ID', width: 120 },
-        { field: 'fullName', headerName: 'Name', width: 250 },
+        { field: 'id', headerName: 'User ID', width: 200 },
+        { field: 'fullName', headerName: 'Name', width: 230 },
         { field: 'email', headerName: 'Email', width: 400 },
         { field: 'role', headerName: 'Role', width: 250, },
         {
@@ -66,22 +67,8 @@ const Users = () => {
         },
     ];
 
-    // trigger edit user modal
-    const handleEdit = (data) => {
-        // console.log(data);
-        setUserData(data)
-        handleOpenEdit()
-    };
-
-    // trigger delete user modal
-    const handleDelete = (data) => {
-        setUserData(data)
-        handleOpenDelete()
-    };
-
     // state for edit user modal
     const [openEditModal, setOpenEditModal] = useState(false);
-    const [userData, setUserData] = useState()
     const handleOpenEdit = () => setOpenEditModal(true);
     const handleCloseEdit = () => setOpenEditModal(false);
 
@@ -94,6 +81,19 @@ const Users = () => {
     const [openDeleteModal, setOpenDeleteModal] = useState(false);
     const handleOpenDelete = () => setOpenDeleteModal(true);
     const handleCloseDelete = () => setOpenDeleteModal(false);
+
+    // trigger edit user modal
+    const handleEdit = (data) => {
+        // console.log(data);
+        setUserData(data)
+        handleOpenEdit()
+    };
+
+    // trigger delete user modal
+    const handleDelete = (data) => {
+        setUserData(data)
+        handleOpenDelete()
+    };
 
     // filter user data
     const filterUserData = (e) => {
