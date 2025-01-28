@@ -25,7 +25,7 @@ export const UserProvider = ({ children }) => {
         { id: generateUID(), fullName: "Benjamin Hall", firstName: "Benjamin", lastName: "Hall", email: "benjamin@example.com", role: "Viewer" },
         { id: generateUID(), fullName: "Charlotte Allen", firstName: "Charlotte", lastName: "Allen", email: "charlotte@example.com", role: "Editor" },
         { id: generateUID(), fullName: "Henry Young", firstName: "Henry", lastName: "Young", email: "henry@example.com", role: "Admin" },
-        { id: generateUID(), fullName: "Amelia King", firstName: "Amelia", lastName: "King", email: "amelia@example.com", role: "Viewer" },
+        // { id: generateUID(), fullName: "Amelia King", firstName: "Amelia", lastName: "King", email: "amelia@example.com", role: "Viewer" },
     ])
 
     useEffect(() => {
